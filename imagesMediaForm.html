@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Images, Media and Form elements</title>
+        <style>
+            html {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: black;
+            }
+
+            header {
+                box-sizing: border-box;
+                border: .1px solid red;
+                background-color: rgb(250, 180, 89);
+                margin: 0;
+                padding: 5vw;
+            }
+
+            main {
+                box-sizing: border-box;
+                border: .1vw solid greenyellow;
+                background-color: antiquewhite;
+                margin: 0;
+                padding: 5vw;
+            }
+
+            .wrapper {
+                border: .1px solid gray;
+            }
+
+            .box {
+                width: 300px;
+                border: 2px solid lightblue;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            img {
+                max-width:  100%;
+                /*display: felx;*/
+                /*object-fit: cover; /* fill, contain, scale-down */
+            }
+
+            /* This is for second one */
+            .wrapperSec {
+                border: .1px solid gray;
+                padding: 2%;
+
+            }
+
+            .boxSec {
+                width: 400px;
+                border: 2px solid lightblue;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .cover {
+                object-fit: cover;
+            }
+
+            .contain {
+                object-fit: contain;
+            }
+            footer {
+                box-sizing: border-box;
+                border: .1pt solid navajowhite;
+                background-color: gray;
+                margin: 0;
+                padding: 5vw;
+            }
+            /* Replaced elements in layout */
+
+            .wrapperThree {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 200px 200px;
+                gap: 20px;
+            }
+
+            .wrapperThree > div {
+                background-color: rebeccapurple;
+                border-radius: .5em;
+            }
+
+            /* Form elements */
+            /* Should be default setting for form element */
+            /*
+            button,
+            input,
+            select,
+            textarea {
+                font-family: inherit;
+                font-size: 100%;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            textarea {
+                overflow: auto;
+            }
+            */
+
+            form {
+                border: 1px solid gray;
+                padding: 2vw;
+            }
+
+            input[type="text"],
+            input[type="email"] {
+                box-sizing: border-box;
+                border: 2px solid #000;
+                margin: 0 0 1em 0;
+                padding: 10px;
+                width: 100%;
+            }
+
+            input[type="submit"] {
+                border: 3px solid #333;
+                background-color: #999;
+                border-radius: 5px;
+                padding: 10px 2em;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            input[type="submit"]:hover, input[type="submit"]:focus {
+                background-color: #333;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Images, Media and Form elements</h1>
+        </header>
+        <main>
+            <article>
+                <h2>Sizing Images</h2>
+                <p>
+                    Everything in CSS generates a box. If you place an image inside a box that is smaller or larger than the intrinsic dimensions of the image file in either direction, it will either appear smaller than the box, or overflow the box. You need to make a decision about what happens with the overflow.
+                </p>
+
+                <div class="wrapper">
+                    <div class="box"><img src="../backgroundBorders/images/tile.png" alt="star"></div>
+                    <div class="box"><img src="../backgroundBorders/images/emoji.png" alt="balloons"></div>
+                </div>
+
+                <h2>Second Way</h2>
+
+                <div class="wrapperSec">
+                    <div class="boxSec"><img src="../backgroundBorders/images/companySpace.jpg" alt="balloons" class="cover"></div>
+                    <div class="boxSec"><img src="../backgroundBorders/images/companySpace.jpg" alt="balloons" class="contain"></div>
+                </div>
+
+                <h2>Third way</h2>
+                <p>
+                    When using various CSS layout techniques on replaced elements, you may well find that they behave slightly differently from other elements. For example, in a flex or grid layout, elements are stretched by default to fill the entire area. Images will not stretch, and instead will be aligned to the start of the grid area or flex container.
+                </p>
+
+                <div class="wrapperThree">
+                    <img src="../backgroundBorders/images/tile.png" alt="star">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <!--Form elements-->
+                <h2>Form elements</h2>
+                <p>
+                    Many form controls are added to your page by way of the &lt;input&gt; element — this defines simple form fields such as text inputs, through to more complex fields such as color and date pickers. There are some additional elements, such as &lt;textarea&gt; for multiline text input, and also elements used to contain and label parts of forms such as &lt;fieldset&gt; and &lt;legend&gt;.
+                </p>
+
+                <h2>Styling text input elements</h2>
+                <p>
+                    Elements that allow for text input, such as &lt;input type="text"&gt;, and the more specific &lt;input type="email"&gt;, and the &lt;textarea&gt; element are quite easy to style and tend to behave just like other boxes on your page. The default styling of these elements will differ, however, based on the operating system and browser that your user visits the site with.
+                </p>
+
+                <form>
+                    <div><label for="name">Name</label>
+                    <input type="text" id="name"></div>
+                    <div><label for="email">Email</label>
+                    <input type="email" id="email"></div>
+                  
+                    <div class="buttons"><input type="submit" value="Submit"></div>
+                </form>
+
+
+
+            </article>
+        </main>
+        <footer>
+            <p>This is footer.</p>
+        </footer>
+    </body>
+</html>
